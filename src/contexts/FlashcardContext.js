@@ -1,7 +1,7 @@
-import { useState, useContext } from "react";
+import { useState, createContext } from "react";
 import FLASHCARDS from "../mock/flashcardsMock";
 
-export const FlashCardContext = useContext();
+export const FlashCardContext = createContext();
 
 const FlashCardProvider = ({ children }) => {
   const [flashcards, setFlashCards] = useState(FLASHCARDS);
