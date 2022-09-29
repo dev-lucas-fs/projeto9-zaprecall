@@ -1,3 +1,9 @@
+import FlashCardProvider from "../contexts/FlashcardContext";
+
 export default function App() {
-  return <div>App</div>;
+  return (
+    <FlashCardProvider>
+      <div>App</div>
+    </FlashCardProvider>
+  );
 }
