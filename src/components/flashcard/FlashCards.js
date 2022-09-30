@@ -1,13 +1,29 @@
 import { useContext, useState } from "react";
 import { FlashCardContext } from "../../contexts/FlashcardContext";
+import FlashCard from "./FlashCard";
 
 export default function FlashCards() {
   const context = useContext(FlashCardContext);
   const [disabledFlashCards, setDisabledFlashCards] = useState(
     context.flashcards.map((_) => false)
   );
+
+  function updateDisabledFlashCards(disabled = true) {
+    if (disabled) {
+      setDisabledFlashCards(disabledFlashCards.map((_) => true));
+    } else {
+      setDisabledFlashCards(disabledFlashCards.map((_) => false));
+    }
+  }
+
   const data = context.flashcards.map((flashcard, i) => (
-    <div>flashcard.id</div>
+    <FlashCard
+      data={{
+        flashcard,
+        updateDisabledFlashCards: updateDisabledFlashCards,
+        disabledFlashCards: disabledFlashCards[i],
+      }}
+    />
   ));
 
   return <>{data}</>;
