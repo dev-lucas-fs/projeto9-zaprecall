@@ -7,14 +7,14 @@ const FlashCardProvider = ({ children }) => {
   const [flashcards, setFlashCards] = useState(FLASHCARDS);
 
   const updateDoneStatus = (id, doneStatus) => {
-    if (flashcards["id"] === id) {
-      const updatedFlashCards = flashcards.map((flashcard) =>
-        flashcard["id"] == id
-          ? (flashcard.doneStatus = doneStatus)
-          : (flashcard.doneStatus = flashcard.doneStatus)
-      );
-      setFlashCards(updatedFlashCards);
-    }
+    const updatedFlashCards = flashcards.map((flashcard) => {
+      flashcard["id"] == id
+        ? (flashcard.doneStatus = doneStatus)
+        : (flashcard.doneStatus = flashcard.doneStatus);
+
+      return flashcard;
+    });
+    setFlashCards(updatedFlashCards);
   };
 
   return (
