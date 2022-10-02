@@ -3,14 +3,13 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-  max-width: 355px;
-  max-height: 800px;
   border-radius: 5px;
   background: ${(props) => props.theme.background};
   padding: 40px 0px 0px 0px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   justify-items: center;
+  overflow: hidden;
   > *:nth-child(1) {
     grid-row: 1/2;
   }
