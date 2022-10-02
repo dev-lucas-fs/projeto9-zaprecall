@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { FlashCardContext } from "../../contexts/FlashcardContext";
-import FlashCard from "./FlashCard";
+import { FlashCardContext } from "../../../contexts/FlashcardContext";
+import FlashCard from "../FlashCard";
+import { Container } from "./styles";
 
 export default function FlashCards() {
   const context = useContext(FlashCardContext);
@@ -26,5 +27,5 @@ export default function FlashCards() {
     />
   ));
 
-  return <>{data}</>;
+  return <Container>{data}</Container>;
 }

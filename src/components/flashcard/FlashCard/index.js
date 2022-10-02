@@ -18,8 +18,15 @@ export default function FlashCard({ data }) {
       openCard={openCard}
       doneStatus={doneStatus}
     />,
-    <QuestionFlashCard updateCardType={(type) => setCardType(type)} />,
-    <AnswerFlashCard updateCardType={(type) => setCardType(type)} id={id} />,
+    <QuestionFlashCard
+      question={question}
+      updateCardType={(type) => setCardType(type)}
+    />,
+    <AnswerFlashCard
+      answer={answer}
+      updateCardType={(type) => setCardType(type)}
+      id={id}
+    />,
   ];
 
   return <>{cards[cardType]}</>;
